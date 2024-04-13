@@ -1,0 +1,22 @@
+--- xeve-0.4.3-3890dae6/app/xeve_app_util.h.orig	2022-12-21 06:54:14.000000000 +0100
++++ xeve-0.4.3-3890dae6/app/xeve_app_util.h	2024-04-13 20:33:44.722246873 +0200
+@@ -73,7 +73,7 @@ static void log_line(char * pre)
+     len = (pre == NULL)? 0: (int)strlen(pre);
+     if(len > 0)
+     {
+-        sprintf(str + 3, " %s ", pre);
++        snprintf(str + 3, 125, " %s ", pre);
+         len = (int)strlen(str);
+     }
+ 
+--- xeve-0.4.3-3890dae6/CMakeLists.txt.orig	2022-12-21 06:54:14.000000000 +0100
++++ xeve-0.4.3-3890dae6/CMakeLists.txt	2024-04-13 20:34:16.332075628 +0200
+@@ -104,7 +104,7 @@ elseif( UNIX OR MINGW )
+     endif()
+ 
+     set (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${OPT_DBG} -${OPT_LV} -fomit-frame-pointer -Wall -Wno-unused-function -Wno-unused-but-set-variable -Wno-unused-variable -Wno-attributes -Werror -Wno-strict-overflow -Wno-unknown-pragmas -Wno-stringop-overflow -std=c99")
+-    set (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wno-pointer-sign -pthread -Wno-pointer-to-int-cast -Wno-maybe-uninitialized")
++    set (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wno-pointer-sign -pthread -Wno-pointer-to-int-cast -Wno-maybe-uninitialized -Wno-format-truncation")
+     set (CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -lm")
+ endif()
+ 

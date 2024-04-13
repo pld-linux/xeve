@@ -1,0 +1,20 @@
+--- xeve-0.4.3-3890dae6/src_main/CMakeLists.txt.orig	2022-12-21 06:54:14.000000000 +0100
++++ xeve-0.4.3-3890dae6/src_main/CMakeLists.txt	2024-04-13 20:53:32.812477103 +0200
+@@ -103,6 +103,7 @@ elseif( UNIX OR MINGW )
+ 
+     target_compile_definitions( ${LIB_NAME} PUBLIC ANY LINUX )
+     target_link_libraries(${LIB_NAME} m)
++    target_link_libraries(${LIB_NAME}_dynamic m)
+ endif()
+ 
+ # Install rules
+--- xeve-0.4.3-3890dae6/src_base/CMakeLists.txt.orig	2022-12-21 06:54:14.000000000 +0100
++++ xeve-0.4.3-3890dae6/src_base/CMakeLists.txt	2024-04-13 20:53:45.202409981 +0200
+@@ -91,6 +91,7 @@ elseif( UNIX OR MINGW )
+                                                             LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+   target_compile_definitions( ${LIB_NAME_BASE} PUBLIC ANY LINUX )
+   target_link_libraries(${LIB_NAME_BASE} m)
++  target_link_libraries(${LIB_NAME_BASE}_dynamic m)
+ endif()
+ 
+ # Install rules

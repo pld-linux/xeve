@@ -1,0 +1,28 @@
+--- xeve-0.4.3-3890dae6/pkgconfig/xeveb.pc.in.orig	2022-12-21 06:54:14.000000000 +0100
++++ xeve-0.4.3-3890dae6/pkgconfig/xeveb.pc.in	2024-04-14 20:57:57.712973066 +0200
+@@ -1,8 +1,8 @@
+ # --- xeveb.pc.in file ---
+ prefix=@CMAKE_INSTALL_PREFIX@
+-exec_prefix=@CMAKE_INSTALL_PREFIX@/@CMAKE_INSTALL_BINDIR@
+-libdir=@CMAKE_INSTALL_PREFIX@/@CMAKE_INSTALL_LIBDIR@
+-includedir=@CMAKE_INSTALL_PREFIX@/@CMAKE_INSTALL_INCLUDEDIR@/@LIB_NAME_BASE@
++exec_prefix=${prefix}
++libdir=@CMAKE_INSTALL_FULL_LIBDIR@
++includedir=@CMAKE_INSTALL_FULL_INCLUDEDIR@/@LIB_NAME_BASE@
+ 
+ Name: xeveb
+ Description: eXtra-fast Essential Video Encoder (XEVE) (BASE profile)
+--- xeve-0.4.3-3890dae6/pkgconfig/xeve.pc.in.orig	2022-12-21 06:54:14.000000000 +0100
++++ xeve-0.4.3-3890dae6/pkgconfig/xeve.pc.in	2024-04-14 20:59:01.075963132 +0200
+@@ -1,8 +1,8 @@
+ # --- xeve.pc.in file ---
+ prefix=@CMAKE_INSTALL_PREFIX@
+-exec_prefix=@CMAKE_INSTALL_PREFIX@/@CMAKE_INSTALL_BINDIR@
+-libdir=@CMAKE_INSTALL_PREFIX@/@CMAKE_INSTALL_LIBDIR@
+-includedir=@CMAKE_INSTALL_PREFIX@/@CMAKE_INSTALL_INCLUDEDIR@/@LIB_NAME@
++exec_prefix=${prefix}
++libdir=@CMAKE_INSTALL_FULL_LIBDIR@
++includedir=@CMAKE_INSTALL_FULL_INCLUDEDIR@/@LIB_NAME@
+ 
+ Name: xeve
+ Description: eXtra-fast Essential Video Encoder (XEVE) (MAIN profile)

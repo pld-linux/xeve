@@ -5,14 +5,13 @@
 Summary:	eXtra-fast Essential Video Encoder (MPEG-5 EVC)
 Summary(pl.UTF-8):	eXtra-fast Essential Video Encoder - szybki koder obrazu MPEG-5 EVC
 Name:		xeve
-Version:	0.4.3
-%define	gitref	%{version}-3890dae6
-Release:	2
+Version:	0.5.1
+Release:	1
 License:	BSD
 Group:		Libraries
 #Source0Download: https://github.com/mpeg5/xeve/releases
-Source0:	https://github.com/mpeg5/xeve/archive/v%{gitref}/%{name}-%{gitref}.tar.gz
-# Source0-md5:	17e7dc3ba36f43e8311d8a88734aeeca
+Source0:	https://github.com/mpeg5/xeve/archive/v%{version}/%{name}-%{version}.tar.gz
+# Source0-md5:	ac296018c6fdb43459d31b2547b82b68
 Patch0:		%{name}-string.patch
 Patch1:		%{name}-link.patch
 Patch2:		%{name}-dynamic.patch
@@ -126,7 +125,7 @@ Static XEVE library (Baseline Profile).
 Statyczna biblioteka XEVE (profil Baseline).
 
 %prep
-%setup -q -n %{name}-%{gitref}
+%setup -q
 %patch -P0 -p1
 %patch -P1 -p1
 %patch -P2 -p1
